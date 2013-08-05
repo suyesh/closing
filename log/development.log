@@ -1,0 +1,2087 @@
+  [1m[36m (77.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (57.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTotalClosings (20130805002811)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "total_closings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "Total_sale" integer, "Total_pin" integer, "Total_creditcard" integer, "TMZ_Phone" varchar(255), "TMZ_Total" integer, "Sunny_Phone" varchar(255), "Sunny_Total" integer, "Raj" integer, "Bill_paid" integer, "Bill_Received" integer, "Other_paid" varchar(255), "Other_amount" integer, "Cash_In_Hand" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20130805002811"]]
+  [1m[36m (59.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-04 20:42:58 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TotalClosingsController#new as HTML
+  Rendered total_closings/_form.html.erb (45.0ms)
+  Rendered total_closings/new.html.erb within layouts/application (64.0ms)
+Completed 200 OK in 651ms (Views: 626.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 20:42:59 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 20:42:59 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 20:42:59 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 20:42:59 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 20:42:59 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 20:43:00 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 20:43:00 -0400
+
+
+Started POST "/total_closings" for 127.0.0.1 at 2013-08-04 20:43:52 -0400
+Processing by TotalClosingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JKN6vCBiropZH92MUmjhZ+c0E22fhxqfrcSrGGMqkvE=", "total_closing"=>{"Total_sale"=>"50000", "Total_pin"=>"25000", "Total_creditcard"=>"352", "TMZ_Phone"=>"t989", "TMZ_Total"=>"280", "Sunny_Phone"=>"s3", "Sunny_Total"=>"250", "Raj"=>"5000", "Bill_paid"=>"60", "Bill_Received"=>"25", "Other_paid"=>"300", "Other_amount"=>"300", "Cash_In_Hand"=>"300000"}, "commit"=>"Create Total closing"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (7.0ms)[0m  [1mINSERT INTO "total_closings" ("Bill_Received", "Bill_paid", "Cash_In_Hand", "Other_amount", "Other_paid", "Raj", "Sunny_Phone", "Sunny_Total", "TMZ_Phone", "TMZ_Total", "Total_creditcard", "Total_pin", "Total_sale", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Bill_Received", 25], ["Bill_paid", 60], ["Cash_In_Hand", 300000], ["Other_amount", 300], ["Other_paid", "300"], ["Raj", 5000], ["Sunny_Phone", "s3"], ["Sunny_Total", 250], ["TMZ_Phone", "t989"], ["TMZ_Total", 280], ["Total_creditcard", 352], ["Total_pin", 25000], ["Total_sale", 50000], ["created_at", Mon, 05 Aug 2013 00:43:52 UTC +00:00], ["updated_at", Mon, 05 Aug 2013 00:43:52 UTC +00:00]]
+  [1m[35m (69.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/total_closings/1
+Completed 302 Found in 83ms (ActiveRecord: 76.0ms)
+
+
+Started GET "/total_closings/1" for 127.0.0.1 at 2013-08-04 20:43:52 -0400
+Processing by TotalClosingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTotalClosing Load (0.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1[0m  [["id", "1"]]
+ERROR: compiling _app_views_total_closings_show_html_erb___774217017_28534968 RAISED C:/Users/att wireless/Desktop/closing2.0/app/views/total_closings/show.html.erb:73: syntax error, unexpected tIVAR, expecting ')'
+...sing.Sunny_Total @total_closing.Raj - @total_closing.Bill_pa...
+...                               ^
+Function body:           def _app_views_total_closings_show_html_erb___774217017_28534968(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "total_closings/show";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_append='<div class="container">
+  <div class="row" id="login-container">
+    <div class="span8 offset2">
+<p id="notice">';@output_buffer.append=( notice );@output_buffer.safe_append='</p>
+
+<p>
+  <strong>Total sale:</strong>
+  ';@output_buffer.append=( @total_closing.Total_sale );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Total pin:</strong>
+  ';@output_buffer.append=( @total_closing.Total_pin );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Total creditcard:</strong>
+  ';@output_buffer.append=( @total_closing.Total_creditcard );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Tmz phone:</strong>
+  ';@output_buffer.append=( @total_closing.TMZ_Phone );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Tmz total:</strong>
+  ';@output_buffer.append=( @total_closing.TMZ_Total );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Sunny phone:</strong>
+  ';@output_buffer.append=( @total_closing.Sunny_Phone );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Sunny total:</strong>
+  ';@output_buffer.append=( @total_closing.Sunny_Total );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Raj:</strong>
+  ';@output_buffer.append=( @total_closing.Raj );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Bill paid:</strong>
+  ';@output_buffer.append=( @total_closing.Bill_paid );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Bill received:</strong>
+  ';@output_buffer.append=( @total_closing.Bill_Received );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Other paid:</strong>
+  ';@output_buffer.append=( @total_closing.Other_paid );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Other amount:</strong>
+  ';@output_buffer.append=( @total_closing.Other_amount );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Cash in hand:</strong>
+  ';@output_buffer.append=( @total_closing.Cash_In_Hand );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Cash in hand:</strong>
+  ';@output_buffer.append=( @total_closing.Total_sale + @total_closing.Total_pin - @total_closing.Total_creditcard - @total_closing.TMZ_Total - @total_closing.Sunny_Total @total_closing.Raj - @total_closing.Bill_paid + @total_closing.Bill_Received - @total_closing.Other_amount  );@output_buffer.safe_append='
+</p>
+
+';@output_buffer.append=( link_to 'Edit', edit_total_closing_path(@total_closing) );@output_buffer.safe_append=' |
+';@output_buffer.append=( link_to 'Back', total_closings_path );@output_buffer.safe_append='
+</div>
+</div>
+</div>';@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:299:in `module_eval'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:299:in `compile'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:248:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:236:in `compile!'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:142:in `block in render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications.rb:161:in `instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:141:in `render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/template_renderer.rb:49:in `block (2 levels) in render_template'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications.rb:159:in `block in instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications.rb:159:in `instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/template_renderer.rb:48:in `block in render_template'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/template_renderer.rb:56:in `render_with_layout'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/template_renderer.rb:47:in `render_template'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/template_renderer.rb:17:in `render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/renderer.rb:42:in `render_template'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/renderer.rb:23:in `render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/rendering.rb:127:in `_render_template'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/streaming.rb:219:in `_render_template'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/rendering.rb:120:in `render_to_body'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/rendering.rb:97:in `render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/rendering.rb:16:in `render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/core_ext/benchmark.rb:12:in `ms'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-4.0.0/lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/base.rb:189:in `process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/rendering.rb:10:in `process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:413:in `_run__994710292__process_action__callbacks'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:80:in `run_callbacks'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/rescue.rb:29:in `process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications.rb:159:in `block in instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications.rb:159:in `instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-4.0.0/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/base.rb:136:in `process'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/rendering.rb:44:in `process'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal.rb:195:in `dispatch'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal.rb:231:in `block in action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/routing/route_set.rb:80:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/routing/route_set.rb:48:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/journey/router.rb:71:in `block in call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/journey/router.rb:59:in `each'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/journey/router.rb:59:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/routing/route_set.rb:655:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/etag.rb:23:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/conditionalget.rb:25:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/head.rb:11:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/flash.rb:241:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:225:in `context'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:220:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/cookies.rb:486:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-4.0.0/lib/active_record/query_cache.rb:36:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-4.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-4.0.0/lib/active_record/migration.rb:369:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:373:in `_run__926486727__call__callbacks'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:80:in `run_callbacks'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/reloader.rb:64:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.0.0/lib/rails/rack/logger.rb:38:in `call_app'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.0.0/lib/rails/rack/logger.rb:21:in `block in call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/tagged_logging.rb:67:in `block in tagged'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/tagged_logging.rb:25:in `tagged'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/tagged_logging.rb:67:in `tagged'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.0.0/lib/rails/rack/logger.rb:21:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/static.rb:64:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.0.0/lib/rails/engine.rb:511:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.0.0/lib/rails/application.rb:97:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered total_closings/show.html.erb within layouts/application (26.0ms)
+Completed 500 Internal Server Error in 31ms
+
+ActionView::Template::Error (C:/Users/att wireless/Desktop/closing2.0/app/views/total_closings/show.html.erb:73: syntax error, unexpected tIVAR, expecting ')'
+...sing.Sunny_Total @total_closing.Raj - @total_closing.Bill_pa...
+...                               ^):
+    70: 
+    71: <p>
+    72:   <strong>Cash in hand:</strong>
+    73:   <%= @total_closing.Total_sale + @total_closing.Total_pin - @total_closing.Total_creditcard - @total_closing.TMZ_Total - @total_closing.Sunny_Total @total_closing.Raj - @total_closing.Bill_paid + @total_closing.Bill_Received - @total_closing.Other_amount  %>
+    74: </p>
+    75: 
+    76: <%= link_to 'Edit', edit_total_closing_path(@total_closing) %> |
+  actionpack (4.0.0) lib/action_view/template.rb:299:in `module_eval'
+  actionpack (4.0.0) lib/action_view/template.rb:299:in `compile'
+  actionpack (4.0.0) lib/action_view/template.rb:248:in `block in compile!'
+  <internal:prelude>:10:in `synchronize'
+  actionpack (4.0.0) lib/action_view/template.rb:236:in `compile!'
+  actionpack (4.0.0) lib/action_view/template.rb:142:in `block in render'
+  activesupport (4.0.0) lib/active_support/notifications.rb:161:in `instrument'
+  actionpack (4.0.0) lib/action_view/template.rb:141:in `render'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:49:in `block (2 levels) in render_template'
+  actionpack (4.0.0) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.0) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:48:in `block in render_template'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:56:in `render_with_layout'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:47:in `render_template'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionpack (4.0.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionpack (4.0.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:127:in `_render_template'
+  actionpack (4.0.0) lib/action_controller/metal/streaming.rb:219:in `_render_template'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:120:in `render_to_body'
+  actionpack (4.0.0) lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+  actionpack (4.0.0) lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:97:in `render'
+  actionpack (4.0.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.0.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (4.0.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.0.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.0.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.0.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.0.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.0.0) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:413:in `_run__994710292__process_action__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+  activerecord (4.0.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.0) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__926486727__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.0ms)
+
+
+Started POST "/total_closings" for 127.0.0.1 at 2013-08-04 20:44:41 -0400
+Processing by TotalClosingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JKN6vCBiropZH92MUmjhZ+c0E22fhxqfrcSrGGMqkvE=", "total_closing"=>{"Total_sale"=>"50000", "Total_pin"=>"25000", "Total_creditcard"=>"352", "TMZ_Phone"=>"t989", "TMZ_Total"=>"280", "Sunny_Phone"=>"s3", "Sunny_Total"=>"250", "Raj"=>"5000", "Bill_paid"=>"60", "Bill_Received"=>"25", "Other_paid"=>"300", "Other_amount"=>"300", "Cash_In_Hand"=>"300000"}, "commit"=>"Create Total closing"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "total_closings" ("Bill_Received", "Bill_paid", "Cash_In_Hand", "Other_amount", "Other_paid", "Raj", "Sunny_Phone", "Sunny_Total", "TMZ_Phone", "TMZ_Total", "Total_creditcard", "Total_pin", "Total_sale", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["Bill_Received", 25], ["Bill_paid", 60], ["Cash_In_Hand", 300000], ["Other_amount", 300], ["Other_paid", "300"], ["Raj", 5000], ["Sunny_Phone", "s3"], ["Sunny_Total", 250], ["TMZ_Phone", "t989"], ["TMZ_Total", 280], ["Total_creditcard", 352], ["Total_pin", 25000], ["Total_sale", 50000], ["created_at", Mon, 05 Aug 2013 00:44:41 UTC +00:00], ["updated_at", Mon, 05 Aug 2013 00:44:41 UTC +00:00]]
+  [1m[35m (136.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/total_closings/2
+Completed 302 Found in 143ms (ActiveRecord: 137.0ms)
+
+
+Started GET "/total_closings/2" for 127.0.0.1 at 2013-08-04 20:44:41 -0400
+Processing by TotalClosingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTotalClosing Load (1.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  Rendered total_closings/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 20:44:41 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 20:44:41 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 20:44:41 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 20:44:41 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 20:44:41 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 20:44:41 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 20:44:42 -0400
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 20:45:35 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[35mTotalClosing Load (1.0ms)[0m  SELECT "total_closings".* FROM "total_closings"
+  Rendered total_closings/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/total_closings/new" for 127.0.0.1 at 2013-08-04 20:51:20 -0400
+Processing by TotalClosingsController#new as HTML
+  Rendered total_closings/_form.html.erb (7.0ms)
+  Rendered total_closings/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/total_closings" for 127.0.0.1 at 2013-08-04 20:51:47 -0400
+Processing by TotalClosingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JKN6vCBiropZH92MUmjhZ+c0E22fhxqfrcSrGGMqkvE=", "total_closing"=>{"Total_sale"=>"25255", "Total_pin"=>"5225525", "Total_creditcard"=>"555885", "TMZ_Phone"=>"sdffsdf", "TMZ_Total"=>"552552", "Sunny_Phone"=>"sdffsdf", "Sunny_Total"=>"552552", "Raj"=>"522552", "Bill_paid"=>"5225852", "Bill_Received"=>"5225", "Other_paid"=>"5255", "Other_amount"=>"25525", "Cash_In_Hand"=>"25552"}, "commit"=>"Create Total closing"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "total_closings" ("Bill_Received", "Bill_paid", "Cash_In_Hand", "Other_amount", "Other_paid", "Raj", "Sunny_Phone", "Sunny_Total", "TMZ_Phone", "TMZ_Total", "Total_creditcard", "Total_pin", "Total_sale", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Bill_Received", 5225], ["Bill_paid", 5225852], ["Cash_In_Hand", 25552], ["Other_amount", 25525], ["Other_paid", "5255"], ["Raj", 522552], ["Sunny_Phone", "sdffsdf"], ["Sunny_Total", 552552], ["TMZ_Phone", "sdffsdf"], ["TMZ_Total", 552552], ["Total_creditcard", 555885], ["Total_pin", 5225525], ["Total_sale", 25255], ["created_at", Mon, 05 Aug 2013 00:51:47 UTC +00:00], ["updated_at", Mon, 05 Aug 2013 00:51:47 UTC +00:00]]
+  [1m[36m (51.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/total_closings/3
+Completed 302 Found in 56ms (ActiveRecord: 52.0ms)
+
+
+Started GET "/total_closings/3" for 127.0.0.1 at 2013-08-04 20:51:47 -0400
+Processing by TotalClosingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered total_closings/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 20:51:47 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 20:51:47 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 20:51:47 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 20:51:47 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 20:51:47 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 20:51:47 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 20:51:47 -0400
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 20:52:03 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[36mTotalClosing Load (1.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings"[0m
+  Rendered total_closings/index.html.erb within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined local variable or method `total' for #<#<Class:0x6366f00>:0x40e5f58>):
+    38:         <td><%= total_closing.Other_paid %></td>
+    39:         <td><%= total_closing.Other_amount %></td>
+    40:         <td><%= total_closing.Cash_In_Hand %></td>
+    41:         <td><%= puts total %></td>
+    42:         <td><%= link_to 'Show', total_closing %></td>
+    43:         <td><%= link_to 'Edit', edit_total_closing_path(total_closing) %></td>
+    44:         <td><%= link_to 'Destroy', total_closing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  app/views/total_closings/index.html.erb:41:in `block in _app_views_total_closings_index_html_erb___493260473_34031616'
+  app/views/total_closings/index.html.erb:26:in `_app_views_total_closings_index_html_erb___493260473_34031616'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.0ms)
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 20:52:03 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings"
+  Rendered total_closings/index.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (undefined local variable or method `total' for #<#<Class:0x6366f00>:0x2a0ddb8>):
+    38:         <td><%= total_closing.Other_paid %></td>
+    39:         <td><%= total_closing.Other_amount %></td>
+    40:         <td><%= total_closing.Cash_In_Hand %></td>
+    41:         <td><%= puts total %></td>
+    42:         <td><%= link_to 'Show', total_closing %></td>
+    43:         <td><%= link_to 'Edit', edit_total_closing_path(total_closing) %></td>
+    44:         <td><%= link_to 'Destroy', total_closing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  app/views/total_closings/index.html.erb:41:in `block in _app_views_total_closings_index_html_erb___493260473_22421976'
+  app/views/total_closings/index.html.erb:26:in `_app_views_total_closings_index_html_erb___493260473_22421976'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.0ms)
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 20:52:18 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[36mTotalClosing Load (0.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings"[0m
+  Rendered total_closings/index.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (undefined local variable or method `total' for #<#<Class:0x6366f00>:0x38d80d0>):
+    38:         <td><%= total_closing.Other_paid %></td>
+    39:         <td><%= total_closing.Other_amount %></td>
+    40:         <td><%= total_closing.Cash_In_Hand %></td>
+    41:         <td><%= render total %></td>
+    42:         <td><%= link_to 'Show', total_closing %></td>
+    43:         <td><%= link_to 'Edit', edit_total_closing_path(total_closing) %></td>
+    44:         <td><%= link_to 'Destroy', total_closing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  app/views/total_closings/index.html.erb:41:in `block in _app_views_total_closings_index_html_erb___493260473_31424472'
+  app/views/total_closings/index.html.erb:26:in `_app_views_total_closings_index_html_erb___493260473_31424472'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.0ms)
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 20:53:36 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[35mTotalClosing Load (1.0ms)[0m  SELECT "total_closings".* FROM "total_closings"
+  Rendered total_closings/index.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (undefined method `Total_sale' for nil:NilClass):
+    38:         <td><%= total_closing.Other_paid %></td>
+    39:         <td><%= total_closing.Other_amount %></td>
+    40:         <td><%= total_closing.Cash_In_Hand %></td>
+    41:         <td><%= @total_closing.Total_sale + @total_closing.Total_pin - @total_closing.Total_creditcard - @total_closing.TMZ_Total - @total_closing.Sunny_Total - @total_closing.Raj - @total_closing.Bill_paid + @total_closing.Bill_Received - @total_closing.Other_amount   %></td>
+    42:         <td><%= link_to 'Show', total_closing %></td>
+    43:         <td><%= link_to 'Edit', edit_total_closing_path(total_closing) %></td>
+    44:         <td><%= link_to 'Destroy', total_closing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  app/views/total_closings/index.html.erb:41:in `block in _app_views_total_closings_index_html_erb___493260473_29021664'
+  app/views/total_closings/index.html.erb:26:in `_app_views_total_closings_index_html_erb___493260473_29021664'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-04 20:53:52 -0400
+Processing by TotalClosingsController#new as HTML
+  Rendered total_closings/_form.html.erb (6.0ms)
+  Rendered total_closings/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 13ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 20:53:52 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 20:53:52 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 20:53:52 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 20:53:52 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 20:53:52 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 20:53:52 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 20:53:52 -0400
+
+
+Started POST "/total_closings" for 127.0.0.1 at 2013-08-04 20:53:59 -0400
+Processing by TotalClosingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JKN6vCBiropZH92MUmjhZ+c0E22fhxqfrcSrGGMqkvE=", "total_closing"=>{"Total_sale"=>"", "Total_pin"=>"", "Total_creditcard"=>"", "TMZ_Phone"=>"", "TMZ_Total"=>"", "Sunny_Phone"=>"", "Sunny_Total"=>"", "Raj"=>"", "Bill_paid"=>"", "Bill_Received"=>"", "Other_paid"=>"", "Other_amount"=>"", "Cash_In_Hand"=>""}, "commit"=>"Create Total closing"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "total_closings" ("Other_paid", "Sunny_Phone", "TMZ_Phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["Other_paid", ""], ["Sunny_Phone", ""], ["TMZ_Phone", ""], ["created_at", Mon, 05 Aug 2013 00:53:59 UTC +00:00], ["updated_at", Mon, 05 Aug 2013 00:53:59 UTC +00:00]]
+  [1m[36m (103.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/total_closings/4
+Completed 302 Found in 110ms (ActiveRecord: 104.0ms)
+
+
+Started GET "/total_closings/4" for 127.0.0.1 at 2013-08-04 20:54:00 -0400
+Processing by TotalClosingsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1  [["id", "4"]]
+  Rendered total_closings/show.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `+' for nil:NilClass):
+    70: 
+    71: <p>
+    72:   <strong>TOTAL</strong>
+    73:   <%= @total_closing.Total_sale + @total_closing.Total_pin - @total_closing.Total_creditcard - @total_closing.TMZ_Total - @total_closing.Sunny_Total - @total_closing.Raj - @total_closing.Bill_paid + @total_closing.Bill_Received - @total_closing.Other_amount   %>
+    74: 
+    75: </p>
+    76: 
+  app/views/total_closings/show.html.erb:73:in `_app_views_total_closings_show_html_erb___774217017_34062192'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.0ms)
+
+
+Started POST "/total_closings" for 127.0.0.1 at 2013-08-04 20:54:43 -0400
+Processing by TotalClosingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JKN6vCBiropZH92MUmjhZ+c0E22fhxqfrcSrGGMqkvE=", "total_closing"=>{"Total_sale"=>"455465456", "Total_pin"=>"45654645", "Total_creditcard"=>"5464545", "TMZ_Phone"=>"sdfgdfg", "TMZ_Total"=>"4565454", "Sunny_Phone"=>"sddfgdf", "Sunny_Total"=>"55655", "Raj"=>"456456", "Bill_paid"=>"4545646", "Bill_Received"=>"4564566", "Other_paid"=>"456465", "Other_amount"=>"45646", "Cash_In_Hand"=>"465546"}, "commit"=>"Create Total closing"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "total_closings" ("Bill_Received", "Bill_paid", "Cash_In_Hand", "Other_amount", "Other_paid", "Raj", "Sunny_Phone", "Sunny_Total", "TMZ_Phone", "TMZ_Total", "Total_creditcard", "Total_pin", "Total_sale", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Bill_Received", 4564566], ["Bill_paid", 4545646], ["Cash_In_Hand", 465546], ["Other_amount", 45646], ["Other_paid", "456465"], ["Raj", 456456], ["Sunny_Phone", "sddfgdf"], ["Sunny_Total", 55655], ["TMZ_Phone", "sdfgdfg"], ["TMZ_Total", 4565454], ["Total_creditcard", 5464545], ["Total_pin", 45654645], ["Total_sale", 455465456], ["created_at", Mon, 05 Aug 2013 00:54:43 UTC +00:00], ["updated_at", Mon, 05 Aug 2013 00:54:43 UTC +00:00]]
+  [1m[36m (55.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/total_closings/5
+Completed 302 Found in 62ms (ActiveRecord: 56.0ms)
+
+
+Started GET "/total_closings/5" for 127.0.0.1 at 2013-08-04 20:54:43 -0400
+Processing by TotalClosingsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1  [["id", "5"]]
+  Rendered total_closings/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 20:54:43 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 20:54:43 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 20:54:43 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 20:54:43 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 20:54:43 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 20:54:43 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 20:54:43 -0400
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 20:54:52 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[36mTotalClosing Load (1.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings"[0m
+  Rendered total_closings/index.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `Total_sale' for nil:NilClass):
+    38:         <td><%= total_closing.Other_paid %></td>
+    39:         <td><%= total_closing.Other_amount %></td>
+    40:         <td><%= total_closing.Cash_In_Hand %></td>
+    41:         <td><%= @total_closing.Total_sale + @total_closing.Total_pin - @total_closing.Total_creditcard - @total_closing.TMZ_Total - @total_closing.Sunny_Total - @total_closing.Raj - @total_closing.Bill_paid + @total_closing.Bill_Received - @total_closing.Other_amount   %></td>
+    42:         <td><%= link_to 'Show', total_closing %></td>
+    43:         <td><%= link_to 'Edit', edit_total_closing_path(total_closing) %></td>
+    44:         <td><%= link_to 'Destroy', total_closing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  app/views/total_closings/index.html.erb:41:in `block in _app_views_total_closings_index_html_erb___493260473_34318788'
+  app/views/total_closings/index.html.erb:26:in `_app_views_total_closings_index_html_erb___493260473_34318788'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.0ms)
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 20:54:52 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings"
+  Rendered total_closings/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 17ms
+
+ActionView::Template::Error (undefined method `Total_sale' for nil:NilClass):
+    38:         <td><%= total_closing.Other_paid %></td>
+    39:         <td><%= total_closing.Other_amount %></td>
+    40:         <td><%= total_closing.Cash_In_Hand %></td>
+    41:         <td><%= @total_closing.Total_sale + @total_closing.Total_pin - @total_closing.Total_creditcard - @total_closing.TMZ_Total - @total_closing.Sunny_Total - @total_closing.Raj - @total_closing.Bill_paid + @total_closing.Bill_Received - @total_closing.Other_amount   %></td>
+    42:         <td><%= link_to 'Show', total_closing %></td>
+    43:         <td><%= link_to 'Edit', edit_total_closing_path(total_closing) %></td>
+    44:         <td><%= link_to 'Destroy', total_closing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  app/views/total_closings/index.html.erb:41:in `block in _app_views_total_closings_index_html_erb___493260473_29021664'
+  app/views/total_closings/index.html.erb:26:in `_app_views_total_closings_index_html_erb___493260473_29021664'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.0ms)
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 20:55:24 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[36mTotalClosing Load (0.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings"[0m
+  Rendered total_closings/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 20:55:24 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 20:55:24 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 20:55:24 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 20:55:24 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 20:55:25 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 20:55:25 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 20:55:25 -0400
+
+
+Started GET "/total_closings/4" for 127.0.0.1 at 2013-08-04 20:55:27 -0400
+Processing by TotalClosingsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1  [["id", "4"]]
+  Rendered total_closings/show.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `+' for nil:NilClass):
+    70: 
+    71: <p>
+    72:   <strong>TOTAL</strong>
+    73:   <%= @total_closing.Total_sale + @total_closing.Total_pin - @total_closing.Total_creditcard - @total_closing.TMZ_Total - @total_closing.Sunny_Total - @total_closing.Raj - @total_closing.Bill_paid + @total_closing.Bill_Received - @total_closing.Other_amount   %>
+    74: 
+    75: </p>
+    76: 
+  app/views/total_closings/show.html.erb:73:in `_app_views_total_closings_show_html_erb___774217017_31913328'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.0ms)
+
+
+Started GET "/total_closings/4" for 127.0.0.1 at 2013-08-04 20:55:28 -0400
+Processing by TotalClosingsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTotalClosing Load (0.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  Rendered total_closings/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `+' for nil:NilClass):
+    70: 
+    71: <p>
+    72:   <strong>TOTAL</strong>
+    73:   <%= @total_closing.Total_sale + @total_closing.Total_pin - @total_closing.Total_creditcard - @total_closing.TMZ_Total - @total_closing.Sunny_Total - @total_closing.Raj - @total_closing.Bill_paid + @total_closing.Bill_Received - @total_closing.Other_amount   %>
+    74: 
+    75: </p>
+    76: 
+  app/views/total_closings/show.html.erb:73:in `_app_views_total_closings_show_html_erb___774217017_34062192'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.0ms)
+
+
+Started GET "/total_closings/4" for 127.0.0.1 at 2013-08-04 20:55:33 -0400
+Processing by TotalClosingsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1  [["id", "4"]]
+  Rendered total_closings/show.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `+' for nil:NilClass):
+    70: 
+    71: <p>
+    72:   <strong>TOTAL</strong>
+    73:   <%= @total_closing.Total_sale + @total_closing.Total_pin - @total_closing.Total_creditcard - @total_closing.TMZ_Total - @total_closing.Sunny_Total - @total_closing.Raj - @total_closing.Bill_paid + @total_closing.Bill_Received - @total_closing.Other_amount   %>
+    74: 
+    75: </p>
+    76: 
+  app/views/total_closings/show.html.erb:73:in `_app_views_total_closings_show_html_erb___774217017_34062192'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.0ms)
+
+
+Started DELETE "/total_closings/4" for 127.0.0.1 at 2013-08-04 20:55:51 -0400
+Processing by TotalClosingsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JKN6vCBiropZH92MUmjhZ+c0E22fhxqfrcSrGGMqkvE=", "id"=>"4"}
+  [1m[36mTotalClosing Load (0.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "total_closings" WHERE "total_closings"."id" = ?[0m  [["id", 4]]
+  [1m[35m (77.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/total_closings
+Completed 302 Found in 82ms (ActiveRecord: 77.0ms)
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 20:55:51 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[36mTotalClosing Load (0.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings"[0m
+  Rendered total_closings/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 20:55:51 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 20:55:51 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 20:55:51 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 20:55:51 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 20:55:51 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 20:55:51 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 20:55:51 -0400
+
+
+Started GET "/total_closings/1" for 127.0.0.1 at 2013-08-04 20:55:54 -0400
+Processing by TotalClosingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered total_closings/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/total_closings/2" for 127.0.0.1 at 2013-08-04 20:56:05 -0400
+Processing by TotalClosingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTotalClosing Load (0.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  Rendered total_closings/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 20:57:28 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings"
+  Rendered total_closings/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 12ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/total_closings/new" for 127.0.0.1 at 2013-08-04 20:57:32 -0400
+Processing by TotalClosingsController#new as HTML
+  Rendered total_closings/_form.html.erb (7.0ms)
+  Rendered total_closings/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/total_closings/new" for 127.0.0.1 at 2013-08-04 20:59:02 -0400
+Processing by TotalClosingsController#new as HTML
+  Rendered total_closings/_form.html.erb (6.0ms)
+  Rendered total_closings/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 13ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 20:59:03 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 20:59:03 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 20:59:03 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 20:59:03 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 20:59:03 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 20:59:03 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 20:59:03 -0400
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 20:59:07 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[36mTotalClosing Load (0.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings"[0m
+  Rendered total_closings/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 20:59:07 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 20:59:07 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 20:59:07 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 20:59:07 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 20:59:07 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 20:59:07 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 20:59:07 -0400
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 20:59:26 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings"
+  Rendered total_closings/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 20:59:26 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 20:59:26 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 20:59:26 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 20:59:26 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 20:59:26 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 20:59:26 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 20:59:26 -0400
+
+
+Started GET "/total_closings/new" for 127.0.0.1 at 2013-08-04 20:59:34 -0400
+Processing by TotalClosingsController#new as HTML
+  Rendered total_closings/_form.html.erb (6.0ms)
+  Rendered total_closings/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/total_closings/1" for 127.0.0.1 at 2013-08-04 20:59:57 -0400
+Processing by TotalClosingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTotalClosing Load (0.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered total_closings/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/total_closings/1" for 127.0.0.1 at 2013-08-04 21:00:11 -0400
+Processing by TotalClosingsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JKN6vCBiropZH92MUmjhZ+c0E22fhxqfrcSrGGMqkvE=", "id"=>"1"}
+  [1m[35mTotalClosing Load (1.0ms)[0m  SELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "total_closings" WHERE "total_closings"."id" = ?  [["id", 1]]
+  [1m[36m (131.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/total_closings
+Completed 302 Found in 135ms (ActiveRecord: 133.0ms)
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 21:00:11 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings"
+  Rendered total_closings/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 21:00:11 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:11 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:11 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:11 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:11 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:11 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:11 -0400
+
+
+Started DELETE "/total_closings/2" for 127.0.0.1 at 2013-08-04 21:00:14 -0400
+Processing by TotalClosingsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JKN6vCBiropZH92MUmjhZ+c0E22fhxqfrcSrGGMqkvE=", "id"=>"2"}
+  [1m[36mTotalClosing Load (0.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "total_closings" WHERE "total_closings"."id" = ?[0m  [["id", 2]]
+  [1m[35m (48.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/total_closings
+Completed 302 Found in 53ms (ActiveRecord: 50.0ms)
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 21:00:14 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[36mTotalClosing Load (0.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings"[0m
+  Rendered total_closings/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 21:00:14 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:14 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:15 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:15 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:15 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:15 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:15 -0400
+
+
+Started DELETE "/total_closings/3" for 127.0.0.1 at 2013-08-04 21:00:19 -0400
+Processing by TotalClosingsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JKN6vCBiropZH92MUmjhZ+c0E22fhxqfrcSrGGMqkvE=", "id"=>"3"}
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1  [["id", "3"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "total_closings" WHERE "total_closings"."id" = ?  [["id", 3]]
+  [1m[36m (72.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/total_closings
+Completed 302 Found in 89ms (ActiveRecord: 72.0ms)
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 21:00:19 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings"
+  Rendered total_closings/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 21:00:19 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:19 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:19 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:19 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:19 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:19 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:19 -0400
+
+
+Started DELETE "/total_closings/5" for 127.0.0.1 at 2013-08-04 21:00:22 -0400
+Processing by TotalClosingsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JKN6vCBiropZH92MUmjhZ+c0E22fhxqfrcSrGGMqkvE=", "id"=>"5"}
+  [1m[36mTotalClosing Load (0.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "total_closings" WHERE "total_closings"."id" = ?[0m  [["id", 5]]
+  [1m[35m (136.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/total_closings
+Completed 302 Found in 140ms (ActiveRecord: 137.0ms)
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 21:00:22 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[36mTotalClosing Load (0.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings"[0m
+  Rendered total_closings/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 21:00:22 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:22 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:23 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:23 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:23 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:23 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 21:00:23 -0400
+
+
+Started GET "/total_closings/new" for 127.0.0.1 at 2013-08-04 21:00:29 -0400
+Processing by TotalClosingsController#new as HTML
+  Rendered total_closings/_form.html.erb (6.0ms)
+  Rendered total_closings/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-04 21:02:10 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TotalClosingsController#new as HTML
+  Rendered total_closings/_form.html.erb (55.0ms)
+  Rendered total_closings/new.html.erb within layouts/application (64.0ms)
+Completed 200 OK in 150ms (Views: 124.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 21:02:11 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 21:02:11 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 21:02:11 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 21:02:11 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 21:02:11 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 21:02:11 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 21:02:11 -0400
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 21:02:14 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings"
+  Rendered total_closings/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 21:02:17 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[36mTotalClosing Load (0.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings"[0m
+  Rendered total_closings/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-04 21:03:56 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TotalClosingsController#index as HTML
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings"
+  Rendered total_closings/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 92ms (Views: 68.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 21:03:57 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 21:03:57 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 21:03:57 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 21:03:57 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 21:03:57 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 21:03:57 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 21:03:57 -0400
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 21:04:04 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[36mTotalClosing Load (0.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings"[0m
+  Rendered total_closings/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/total_closings/new" for 127.0.0.1 at 2013-08-04 21:04:06 -0400
+Processing by TotalClosingsController#new as HTML
+  Rendered total_closings/_form.html.erb (44.0ms)
+  Rendered total_closings/new.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 56ms (Views: 55.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 21:10:28 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings"
+  Rendered total_closings/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 21:11:06 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[36mTotalClosing Load (0.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings"[0m
+  Rendered total_closings/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 21:11:06 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 21:11:06 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 21:11:06 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 21:11:06 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 21:11:06 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 21:11:06 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 21:11:06 -0400
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 21:11:24 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings"
+  Rendered total_closings/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 21:11:24 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 21:11:24 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 21:11:24 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 21:11:24 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 21:11:24 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 21:11:24 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 21:11:24 -0400
+
+
+Started GET "/total_closings/new" for 127.0.0.1 at 2013-08-04 21:11:41 -0400
+Processing by TotalClosingsController#new as HTML
+  Rendered total_closings/_form.html.erb (6.0ms)
+  Rendered total_closings/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/total_closings/new" for 127.0.0.1 at 2013-08-04 21:12:01 -0400
+Processing by TotalClosingsController#new as HTML
+  Rendered total_closings/_form.html.erb (6.0ms)
+  Rendered total_closings/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/total_closings" for 127.0.0.1 at 2013-08-04 21:12:24 -0400
+Processing by TotalClosingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JKN6vCBiropZH92MUmjhZ+c0E22fhxqfrcSrGGMqkvE=", "total_closing"=>{"Total_sale"=>"578585", "Total_pin"=>"885285", "Total_creditcard"=>"856586", "TMZ_Phone"=>"yyhhy", "TMZ_Total"=>"5052", "Sunny_Phone"=>"jujnunuj", "Sunny_Total"=>"58250254", "Raj"=>"582852", "Bill_paid"=>"852852", "Bill_Received"=>"82825", "Other_paid"=>"82852", "Other_amount"=>"8685258", "Cash_In_Hand"=>"852828"}, "commit"=>"Submit"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (7.0ms)[0m  INSERT INTO "total_closings" ("Bill_Received", "Bill_paid", "Cash_In_Hand", "Other_amount", "Other_paid", "Raj", "Sunny_Phone", "Sunny_Total", "TMZ_Phone", "TMZ_Total", "Total_creditcard", "Total_pin", "Total_sale", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["Bill_Received", 82825], ["Bill_paid", 852852], ["Cash_In_Hand", 852828], ["Other_amount", 8685258], ["Other_paid", "82852"], ["Raj", 582852], ["Sunny_Phone", "jujnunuj"], ["Sunny_Total", 58250254], ["TMZ_Phone", "yyhhy"], ["TMZ_Total", 5052], ["Total_creditcard", 856586], ["Total_pin", 885285], ["Total_sale", 578585], ["created_at", Mon, 05 Aug 2013 01:12:24 UTC +00:00], ["updated_at", Mon, 05 Aug 2013 01:12:24 UTC +00:00]]
+  [1m[36m (82.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/total_closings/6
+Completed 302 Found in 106ms (ActiveRecord: 89.0ms)
+
+
+Started GET "/total_closings/6" for 127.0.0.1 at 2013-08-04 21:12:24 -0400
+Processing by TotalClosingsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1  [["id", "6"]]
+  Rendered total_closings/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 21:12:24 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 21:12:24 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 21:12:25 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 21:12:25 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 21:12:25 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 21:12:25 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 21:12:25 -0400
+
+
+Started GET "/total_closings" for 127.0.0.1 at 2013-08-04 21:12:29 -0400
+Processing by TotalClosingsController#index as HTML
+  [1m[36mTotalClosing Load (0.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings"[0m
+  Rendered total_closings/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/total_closings/6" for 127.0.0.1 at 2013-08-04 21:18:38 -0400
+Processing by TotalClosingsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1  [["id", "6"]]
+  Rendered total_closings/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 11ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/total_closings/6" for 127.0.0.1 at 2013-08-04 21:20:22 -0400
+Processing by TotalClosingsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTotalClosing Load (0.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  Rendered total_closings/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 21:20:22 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 21:20:22 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 21:20:22 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 21:20:22 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 21:20:22 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 21:20:22 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 21:20:22 -0400
+
+
+Started GET "/total_closings/6" for 127.0.0.1 at 2013-08-04 21:22:36 -0400
+Processing by TotalClosingsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1  [["id", "6"]]
+  Rendered total_closings/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 21:22:36 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 21:22:36 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 21:22:36 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 21:22:36 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 21:22:36 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 21:22:37 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 21:22:37 -0400
+
+
+Started GET "/total_closings/6" for 127.0.0.1 at 2013-08-04 21:22:39 -0400
+Processing by TotalClosingsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTotalClosing Load (0.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  Rendered total_closings/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 21:22:39 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 21:22:39 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 21:22:39 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 21:22:40 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 21:22:40 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 21:22:40 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 21:22:40 -0400
+
+
+Started GET "/total_closings/6" for 127.0.0.1 at 2013-08-04 21:24:24 -0400
+Processing by TotalClosingsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1  [["id", "6"]]
+ERROR: compiling _app_views_total_closings_show_html_erb__511005267_27004044 RAISED C:/Users/att wireless/Desktop/closing2.0/app/views/total_closings/show.html.erb:73: syntax error, unexpected ',', expecting ')'
+...- @total_closing.Other_amount , :class => "s"  );@output_buf...
+...                               ^
+Function body:           def _app_views_total_closings_show_html_erb__511005267_27004044(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "total_closings/show";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_append='<div class="container">
+  <div class="row" id="login-container">
+    <div class="span8 offset2">
+<p id="notice">';@output_buffer.append=( notice );@output_buffer.safe_append='</p>
+
+<p>
+  <strong>Total sale:</strong>
+  ';@output_buffer.append=( @total_closing.Total_sale );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Total pin:</strong>
+  ';@output_buffer.append=( @total_closing.Total_pin );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Total creditcard:</strong>
+  ';@output_buffer.append=( @total_closing.Total_creditcard );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Tmz phone:</strong>
+  ';@output_buffer.append=( @total_closing.TMZ_Phone );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Tmz total:</strong>
+  ';@output_buffer.append=( @total_closing.TMZ_Total );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Sunny phone:</strong>
+  ';@output_buffer.append=( @total_closing.Sunny_Phone );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Sunny total:</strong>
+  ';@output_buffer.append=( @total_closing.Sunny_Total );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Raj:</strong>
+  ';@output_buffer.append=( @total_closing.Raj );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Bill paid:</strong>
+  ';@output_buffer.append=( @total_closing.Bill_paid );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Bill received:</strong>
+  ';@output_buffer.append=( @total_closing.Bill_Received );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Other paid:</strong>
+  ';@output_buffer.append=( @total_closing.Other_paid );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Other amount:</strong>
+  ';@output_buffer.append=( @total_closing.Other_amount );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Cash in hand:</strong>
+  ';@output_buffer.append=( @total_closing.Cash_In_Hand );@output_buffer.safe_append='
+</p>
+
+<p>
+  <span class="label label-important"><strong>TOTAL</strong>
+  ';@output_buffer.append=( @total_closing.Total_sale + @total_closing.Total_pin - @total_closing.Total_creditcard - @total_closing.TMZ_Total - @total_closing.Sunny_Total - @total_closing.Raj - @total_closing.Bill_paid + @total_closing.Bill_Received - @total_closing.Other_amount , :class => "s"  );@output_buffer.safe_append='
+  </span></p>
+
+';@output_buffer.append=( link_to 'Edit', edit_total_closing_path(@total_closing) );@output_buffer.safe_append=' |
+';@output_buffer.append=( link_to 'Back', total_closings_path );@output_buffer.safe_append='
+</div>
+</div>
+</div>';@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:299:in `module_eval'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:299:in `compile'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:248:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:236:in `compile!'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:142:in `block in render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications.rb:161:in `instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:141:in `render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/template_renderer.rb:49:in `block (2 levels) in render_template'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications.rb:159:in `block in instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications.rb:159:in `instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/template_renderer.rb:48:in `block in render_template'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/template_renderer.rb:56:in `render_with_layout'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/template_renderer.rb:47:in `render_template'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/template_renderer.rb:17:in `render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/renderer.rb:42:in `render_template'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/renderer.rb:23:in `render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/rendering.rb:127:in `_render_template'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/streaming.rb:219:in `_render_template'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/rendering.rb:120:in `render_to_body'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/rendering.rb:97:in `render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/rendering.rb:16:in `render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/core_ext/benchmark.rb:12:in `ms'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-4.0.0/lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/base.rb:189:in `process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/rendering.rb:10:in `process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:413:in `_run__603520712__process_action__callbacks'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:80:in `run_callbacks'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/rescue.rb:29:in `process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications.rb:159:in `block in instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications.rb:159:in `instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-4.0.0/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/base.rb:136:in `process'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/rendering.rb:44:in `process'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal.rb:195:in `dispatch'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal.rb:231:in `block in action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/routing/route_set.rb:80:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/routing/route_set.rb:48:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/journey/router.rb:71:in `block in call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/journey/router.rb:59:in `each'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/journey/router.rb:59:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/routing/route_set.rb:655:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/etag.rb:23:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/conditionalget.rb:25:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/head.rb:11:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/flash.rb:241:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:225:in `context'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:220:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/cookies.rb:486:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-4.0.0/lib/active_record/query_cache.rb:36:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-4.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-4.0.0/lib/active_record/migration.rb:369:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:373:in `_run__153862191__call__callbacks'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:80:in `run_callbacks'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/reloader.rb:64:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.0.0/lib/rails/rack/logger.rb:38:in `call_app'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.0.0/lib/rails/rack/logger.rb:21:in `block in call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/tagged_logging.rb:67:in `block in tagged'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/tagged_logging.rb:25:in `tagged'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/tagged_logging.rb:67:in `tagged'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.0.0/lib/rails/rack/logger.rb:21:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/static.rb:64:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.0.0/lib/rails/engine.rb:511:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.0.0/lib/rails/application.rb:97:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered total_closings/show.html.erb within layouts/application (29.0ms)
+Completed 500 Internal Server Error in 34ms
+
+ActionView::Template::Error (C:/Users/att wireless/Desktop/closing2.0/app/views/total_closings/show.html.erb:73: syntax error, unexpected ',', expecting ')'
+...- @total_closing.Other_amount , :class => "s"  );@output_buf...
+...                               ^):
+    70: 
+    71: <p>
+    72:   <span class="label label-important"><strong>TOTAL</strong>
+    73:   <%= @total_closing.Total_sale + @total_closing.Total_pin - @total_closing.Total_creditcard - @total_closing.TMZ_Total - @total_closing.Sunny_Total - @total_closing.Raj - @total_closing.Bill_paid + @total_closing.Bill_Received - @total_closing.Other_amount , :class => "s"  %>
+    74:   </span></p>
+    75: 
+    76: <%= link_to 'Edit', edit_total_closing_path(@total_closing) %> |
+  actionpack (4.0.0) lib/action_view/template.rb:299:in `module_eval'
+  actionpack (4.0.0) lib/action_view/template.rb:299:in `compile'
+  actionpack (4.0.0) lib/action_view/template.rb:248:in `block in compile!'
+  <internal:prelude>:10:in `synchronize'
+  actionpack (4.0.0) lib/action_view/template.rb:236:in `compile!'
+  actionpack (4.0.0) lib/action_view/template.rb:142:in `block in render'
+  activesupport (4.0.0) lib/active_support/notifications.rb:161:in `instrument'
+  actionpack (4.0.0) lib/action_view/template.rb:141:in `render'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:49:in `block (2 levels) in render_template'
+  actionpack (4.0.0) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.0) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:48:in `block in render_template'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:56:in `render_with_layout'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:47:in `render_template'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionpack (4.0.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionpack (4.0.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:127:in `_render_template'
+  actionpack (4.0.0) lib/action_controller/metal/streaming.rb:219:in `_render_template'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:120:in `render_to_body'
+  actionpack (4.0.0) lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+  actionpack (4.0.0) lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:97:in `render'
+  actionpack (4.0.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.0.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (4.0.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.0.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.0.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.0.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.0.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.0.0) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:413:in `_run__603520712__process_action__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+  activerecord (4.0.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.0) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__153862191__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.0ms)
+
+
+Started GET "/total_closings/6" for 127.0.0.1 at 2013-08-04 21:24:25 -0400
+Processing by TotalClosingsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTotalClosing Load (0.0ms)[0m  [1mSELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1[0m  [["id", "6"]]
+ERROR: compiling _app_views_total_closings_show_html_erb__511005267_27004044 RAISED C:/Users/att wireless/Desktop/closing2.0/app/views/total_closings/show.html.erb:73: syntax error, unexpected ',', expecting ')'
+...- @total_closing.Other_amount , :class => "s"  );@output_buf...
+...                               ^
+Function body:           def _app_views_total_closings_show_html_erb__511005267_27004044(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "total_closings/show";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_append='<div class="container">
+  <div class="row" id="login-container">
+    <div class="span8 offset2">
+<p id="notice">';@output_buffer.append=( notice );@output_buffer.safe_append='</p>
+
+<p>
+  <strong>Total sale:</strong>
+  ';@output_buffer.append=( @total_closing.Total_sale );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Total pin:</strong>
+  ';@output_buffer.append=( @total_closing.Total_pin );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Total creditcard:</strong>
+  ';@output_buffer.append=( @total_closing.Total_creditcard );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Tmz phone:</strong>
+  ';@output_buffer.append=( @total_closing.TMZ_Phone );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Tmz total:</strong>
+  ';@output_buffer.append=( @total_closing.TMZ_Total );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Sunny phone:</strong>
+  ';@output_buffer.append=( @total_closing.Sunny_Phone );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Sunny total:</strong>
+  ';@output_buffer.append=( @total_closing.Sunny_Total );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Raj:</strong>
+  ';@output_buffer.append=( @total_closing.Raj );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Bill paid:</strong>
+  ';@output_buffer.append=( @total_closing.Bill_paid );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Bill received:</strong>
+  ';@output_buffer.append=( @total_closing.Bill_Received );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Other paid:</strong>
+  ';@output_buffer.append=( @total_closing.Other_paid );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Other amount:</strong>
+  ';@output_buffer.append=( @total_closing.Other_amount );@output_buffer.safe_append='
+</p>
+
+<p>
+  <strong>Cash in hand:</strong>
+  ';@output_buffer.append=( @total_closing.Cash_In_Hand );@output_buffer.safe_append='
+</p>
+
+<p>
+  <span class="label label-important"><strong>TOTAL</strong>
+  ';@output_buffer.append=( @total_closing.Total_sale + @total_closing.Total_pin - @total_closing.Total_creditcard - @total_closing.TMZ_Total - @total_closing.Sunny_Total - @total_closing.Raj - @total_closing.Bill_paid + @total_closing.Bill_Received - @total_closing.Other_amount , :class => "s"  );@output_buffer.safe_append='
+  </span></p>
+
+';@output_buffer.append=( link_to 'Edit', edit_total_closing_path(@total_closing) );@output_buffer.safe_append=' |
+';@output_buffer.append=( link_to 'Back', total_closings_path );@output_buffer.safe_append='
+</div>
+</div>
+</div>';@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:299:in `module_eval'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:299:in `compile'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:248:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:236:in `compile!'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:142:in `block in render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications.rb:161:in `instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/template.rb:141:in `render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/template_renderer.rb:49:in `block (2 levels) in render_template'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications.rb:159:in `block in instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications.rb:159:in `instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/template_renderer.rb:48:in `block in render_template'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/template_renderer.rb:56:in `render_with_layout'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/template_renderer.rb:47:in `render_template'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/template_renderer.rb:17:in `render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/renderer.rb:42:in `render_template'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_view/renderer/renderer.rb:23:in `render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/rendering.rb:127:in `_render_template'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/streaming.rb:219:in `_render_template'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/rendering.rb:120:in `render_to_body'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/rendering.rb:97:in `render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/rendering.rb:16:in `render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/core_ext/benchmark.rb:12:in `ms'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-4.0.0/lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/base.rb:189:in `process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/rendering.rb:10:in `process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:413:in `_run__603520712__process_action__callbacks'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:80:in `run_callbacks'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/rescue.rb:29:in `process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications.rb:159:in `block in instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/notifications.rb:159:in `instrument'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-4.0.0/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/base.rb:136:in `process'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/abstract_controller/rendering.rb:44:in `process'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal.rb:195:in `dispatch'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal.rb:231:in `block in action'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/routing/route_set.rb:80:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/routing/route_set.rb:48:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/journey/router.rb:71:in `block in call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/journey/router.rb:59:in `each'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/journey/router.rb:59:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/routing/route_set.rb:655:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/etag.rb:23:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/conditionalget.rb:25:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/head.rb:11:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/flash.rb:241:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:225:in `context'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:220:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/cookies.rb:486:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-4.0.0/lib/active_record/query_cache.rb:36:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-4.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-4.0.0/lib/active_record/migration.rb:369:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:373:in `_run__153862191__call__callbacks'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:80:in `run_callbacks'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/reloader.rb:64:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.0.0/lib/rails/rack/logger.rb:38:in `call_app'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.0.0/lib/rails/rack/logger.rb:21:in `block in call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/tagged_logging.rb:67:in `block in tagged'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/tagged_logging.rb:25:in `tagged'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/tagged_logging.rb:67:in `tagged'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.0.0/lib/rails/rack/logger.rb:21:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/static.rb:64:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.0.0/lib/rails/engine.rb:511:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.0.0/lib/rails/application.rb:97:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered total_closings/show.html.erb within layouts/application (22.0ms)
+Completed 500 Internal Server Error in 26ms
+
+ActionView::Template::Error (C:/Users/att wireless/Desktop/closing2.0/app/views/total_closings/show.html.erb:73: syntax error, unexpected ',', expecting ')'
+...- @total_closing.Other_amount , :class => "s"  );@output_buf...
+...                               ^):
+    70: 
+    71: <p>
+    72:   <span class="label label-important"><strong>TOTAL</strong>
+    73:   <%= @total_closing.Total_sale + @total_closing.Total_pin - @total_closing.Total_creditcard - @total_closing.TMZ_Total - @total_closing.Sunny_Total - @total_closing.Raj - @total_closing.Bill_paid + @total_closing.Bill_Received - @total_closing.Other_amount , :class => "s"  %>
+    74:   </span></p>
+    75: 
+    76: <%= link_to 'Edit', edit_total_closing_path(@total_closing) %> |
+  actionpack (4.0.0) lib/action_view/template.rb:299:in `module_eval'
+  actionpack (4.0.0) lib/action_view/template.rb:299:in `compile'
+  actionpack (4.0.0) lib/action_view/template.rb:248:in `block in compile!'
+  <internal:prelude>:10:in `synchronize'
+  actionpack (4.0.0) lib/action_view/template.rb:236:in `compile!'
+  actionpack (4.0.0) lib/action_view/template.rb:142:in `block in render'
+  activesupport (4.0.0) lib/active_support/notifications.rb:161:in `instrument'
+  actionpack (4.0.0) lib/action_view/template.rb:141:in `render'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:49:in `block (2 levels) in render_template'
+  actionpack (4.0.0) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.0) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:48:in `block in render_template'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:56:in `render_with_layout'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:47:in `render_template'
+  actionpack (4.0.0) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionpack (4.0.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionpack (4.0.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:127:in `_render_template'
+  actionpack (4.0.0) lib/action_controller/metal/streaming.rb:219:in `_render_template'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:120:in `render_to_body'
+  actionpack (4.0.0) lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+  actionpack (4.0.0) lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:97:in `render'
+  actionpack (4.0.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.0.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (4.0.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.0.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.0.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.0.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.0.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.0.0) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:413:in `_run__603520712__process_action__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.0) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+  activerecord (4.0.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.0) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.0) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.0) lib/action_dispatch/routing/route_set.rb:655:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.0) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__153862191__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.0ms)
+
+
+Started GET "/total_closings/6" for 127.0.0.1 at 2013-08-04 21:24:46 -0400
+Processing by TotalClosingsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mTotalClosing Load (0.0ms)[0m  SELECT "total_closings".* FROM "total_closings" WHERE "total_closings"."id" = ? LIMIT 1  [["id", "6"]]
+  Rendered total_closings/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-08-04 21:24:46 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-04 21:24:47 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-04 21:24:47 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-08-04 21:24:47 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-08-04 21:24:47 -0400
+
+
+Started GET "/assets/total_closings.js?body=1" for 127.0.0.1 at 2013-08-04 21:24:47 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-04 21:24:47 -0400
