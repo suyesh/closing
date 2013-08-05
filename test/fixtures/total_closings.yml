@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Total_sale: 1
+  Total_pin: 1
+  Total_creditcard: 1
+  TMZ_Phone: MyString
+  TMZ_Total: 1
+  Sunny_Phone: MyString
+  Sunny_Total: 1
+  Raj: 1
+  Bill_paid: 1
+  Bill_Received: 1
+  Other_paid: MyString
+  Other_amount: 1
+  Cash_In_Hand: 1
+
+two:
+  Total_sale: 1
+  Total_pin: 1
+  Total_creditcard: 1
+  TMZ_Phone: MyString
+  TMZ_Total: 1
+  Sunny_Phone: MyString
+  Sunny_Total: 1
+  Raj: 1
+  Bill_paid: 1
+  Bill_Received: 1
+  Other_paid: MyString
+  Other_amount: 1
+  Cash_In_Hand: 1

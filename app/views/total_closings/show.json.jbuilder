@@ -1,0 +1,1 @@
+json.extract! @total_closing, :Total_sale, :Total_pin, :Total_creditcard, :TMZ_Phone, :TMZ_Total, :Sunny_Phone, :Sunny_Total, :Raj, :Bill_paid, :Bill_Received, :Other_paid, :Other_amount, :Cash_In_Hand, :created_at, :updated_at

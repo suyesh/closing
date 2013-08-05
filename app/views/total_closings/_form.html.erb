@@ -1,0 +1,69 @@
+<%= form_for(@total_closing) do |f| %>
+  <% if @total_closing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@total_closing.errors.count, "error") %> prohibited this total_closing from being saved:</h2>
+
+      <ul>
+      <% @total_closing.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Total_sale %><br>
+    <%= f.number_field :Total_sale %>
+  </div>
+  <div class="field">
+    <%= f.label :Total_pin %><br>
+    <%= f.number_field :Total_pin %>
+  </div>
+  <div class="field">
+    <%= f.label :Total_creditcard %><br>
+    <%= f.number_field :Total_creditcard %>
+  </div>
+  <div class="field">
+    <%= f.label :TMZ_Phone %><br>
+    <%= f.text_field :TMZ_Phone %>
+  </div>
+  <div class="field">
+    <%= f.label :TMZ_Total %><br>
+    <%= f.number_field :TMZ_Total %>
+  </div>
+  <div class="field">
+    <%= f.label :Sunny_Phone %><br>
+    <%= f.text_field :Sunny_Phone %>
+  </div>
+  <div class="field">
+    <%= f.label :Sunny_Total %><br>
+    <%= f.number_field :Sunny_Total %>
+  </div>
+  <div class="field">
+    <%= f.label :Raj %><br>
+    <%= f.number_field :Raj %>
+  </div>
+  <div class="field">
+    <%= f.label :Bill_paid %><br>
+    <%= f.number_field :Bill_paid %>
+  </div>
+  <div class="field">
+    <%= f.label :Bill_Received %><br>
+    <%= f.number_field :Bill_Received %>
+  </div>
+  <div class="field">
+    <%= f.label :Other_paid %><br>
+    <%= f.text_field :Other_paid %>
+  </div>
+  <div class="field">
+    <%= f.label :Other_amount %><br>
+    <%= f.number_field :Other_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :Cash_In_Hand %><br>
+    <%= f.number_field :Cash_In_Hand %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Submit', :class => "btn btn-success" %>
+  </div>
+<% end %>
