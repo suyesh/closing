@@ -1,7 +1,8 @@
 <h1>EVERY DAY CLOSINGS</h1>
 <%= link_to 'New Total closing', new_total_closing_path, :class => "btn btn-danger" %>
 
-<table class="table">
+<table class="table table-striped">
+<thead>
   
     <tr>
       <th><span class="label label-success">Total sale</span></th>
@@ -26,6 +27,7 @@
   <tbody>
     <% @total_closings.each do |total_closing| %>
       <tr>
+        
         <td><%= total_closing.Total_sale %></td>
         <td><%= total_closing.Total_pin %></td>
         <td><%= total_closing.Total_creditcard %></td>
@@ -42,7 +44,7 @@
 
         <td><%= link_to 'Show', total_closing %></td>
         <td><%= link_to 'Edit', edit_total_closing_path(total_closing) %></td>
-        <td><%= link_to 'Destroy', total_closing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
       </tr>
     <% end %>
   </tbody>

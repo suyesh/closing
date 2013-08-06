@@ -70,9 +70,13 @@
 
 <p>
   <span class="label label-important"><strong>TOTAL</strong>
-  <%= @total_closing.Total_sale + @total_closing.Total_pin - @total_closing.Total_creditcard - @total_closing.TMZ_Total - @total_closing.Sunny_Total - @total_closing.Raj - @total_closing.Bill_paid + @total_closing.Bill_Received - @total_closing.Other_amount %>
+  <%= @total_closing.Total_sale + @total_closing.Total_pin - @total_closing.Total_creditcard - @total_closing.TMZ_Total - @total_closing.Sunny_Total - @total_closing.Raj - @total_closing.Bill_paid + @total_closing.Bill_Received - @total_closing.Other_amount  %>
+
+
   </span>
-  </p>
+</p>
+
+
 
 <%= link_to 'Edit', edit_total_closing_path(@total_closing) %> |
 <%= link_to 'Back', total_closings_path %>
